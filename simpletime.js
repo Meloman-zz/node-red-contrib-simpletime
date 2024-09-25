@@ -120,7 +120,7 @@ module.exports = function(RED) {
                 msg.mypm = amp;
             };
             if (this.mysql) {
-                msg.mysql = dts+' '+e;
+                msg.mysql = '' + yr + '-' + mnu + '-' + dt + ' ' + hms;
             };
             node.send(msg);
         });
