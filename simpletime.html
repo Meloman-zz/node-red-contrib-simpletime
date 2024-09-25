@@ -25,7 +25,7 @@
             myepoch: {value:true},
             myrawdate: {value:true},
             mypm: {value:true},
-            mysql: {value:true},
+            mysqldt: {value:true},
         },
         inputs:1,
         outputs:1,
@@ -118,9 +118,9 @@
                 this.mypm = true;
                 $("#node-input-mypm").prop('checked', true);
             }
-            if (this.mysql === undefined) {
-                this.mysql = true;
-                $("#node-input-mysql").prop('checked', true);
+            if (this.mysqldt === undefined) {
+                this.mysqldt = true;
+                $("#node-input-mysqldt").prop('checked', true);
             }
         }
     });
@@ -170,8 +170,8 @@
         $("#node-input-myrawdate").prop('checked', true);
         this.mypm = true;
         $("#node-input-mypm").prop('checked', true);
-	this.mysql = true;
-        $("#node-input-mysql").prop('checked', true);
+	this.mysqldt = true;
+        $("#node-input-mysqldt").prop('checked', true);
     };
     function deselectAll() {
         this.mydate = false;
@@ -216,8 +216,8 @@
         $("#node-input-myrawdate").prop('checked', false);
         this.mypm = false;
         $("#node-input-mypm").prop('checked', false);
-        this.mysql = false;
-        $("#node-input-mysql").prop('checked', false);
+        this.mysqldt = false;
+        $("#node-input-mysqldt").prop('checked', false);
     };
 </script>
 
@@ -321,8 +321,8 @@
                 <label for="node-input-mypm" style="width:30%; display:inline"> mypm e.g. "PM"</label>
             </div>
             <div class="form-row">
-                <input type="checkbox" id="node-input-mysql" style="width:15px;">
-                <label for="node-input-mysql" style="width:30%; display:inline"> mysql e.g. "2018-09-11 18:51:17"</label>
+                <input type="checkbox" id="node-input-mysqldt" style="width:15px;">
+                <label for="node-input-mysqldt" style="width:30%; display:inline"> mysqldt e.g. "2018-09-11 18:51:17"</label>
             </div>
         </div>
     </div>
@@ -369,7 +369,7 @@
       <li>msg.myepoch: "1536691877064"</li>
       <li>msg.myrawdate: "2018-09-11T18:51:17.064Z"</li>
       <li>msg.mypm: "PM"</li>
-      <li>msg.mysql: "SQL format"</li>
+      <li>msg.mysqldt: "2018-09-11 18:51:17"</li>
     </ul>
 <p>To introduce any of the messages into a flow, simply assign any, or any combination of the messages into a variable, such as; <code>var seconds = msg.myseconds;</code>
 or to use in a ui_text node add via mustache <code>{{msg.mytimes}}</code></p>
