@@ -23,6 +23,7 @@ module.exports = function(RED) {
         this.myepoch = (config.myepoch === undefined) ? true : config.myepoch;
         this.myrawdate = (config.myrawdate === undefined) ? true : config.myrawdate;
         this.mypm = (config.mypm === undefined) ? true : config.mypm;
+        this.mysql = (config.mysql === undefined) ? true : config.mysql;
         //node.warn("this object after checking for undefined");
         //node.warn(JSON.stringify(this));
         
@@ -117,6 +118,9 @@ module.exports = function(RED) {
             };
             if (this.mypm) {
                 msg.mypm = amp;
+            };
+            if (this.mysql) {
+                msg.mysql = dts+' '+e;
             };
             node.send(msg);
         });
